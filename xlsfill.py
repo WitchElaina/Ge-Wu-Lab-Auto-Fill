@@ -4,6 +4,11 @@ import decimal
 
 from counter import counter
 
+FLOAT_DECIMAL = '0.001'
+ROW = 0
+COLUMN = 0
+XLS_SOURCE = '.xls'
+
 def xlsfill(filename, row, col, sleep_time = 5):
     data = xlrd.open_workbook_xls(filename)
     table = data.sheets()[0]
@@ -18,7 +23,4 @@ def xlsfill(filename, row, col, sleep_time = 5):
 
 
 if __name__ == '__main__':
-    filename = str(input("input .xls file name:"))
-    row = int(input("input row:"))
-    col = int(input("input col:"))
-    xlsfill(filename, row, col)
+    xlsfill(XLS_SOURCE, ROW, COLUMN)
